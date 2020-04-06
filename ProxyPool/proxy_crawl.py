@@ -49,6 +49,5 @@ def crawl_zhandaye():
 
 
 if __name__ == '__main__':
-    # pass
     data = crawl_xici()
     print(data)
