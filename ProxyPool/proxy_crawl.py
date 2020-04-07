@@ -2,8 +2,11 @@ import requests
 import urllib3
 from bs4 import BeautifulSoup as bs
 import re
+import json
 from Settings import HEADERS
 
+# https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list
+# 免费代理 github
 def crawl_xici():
     """
     实现爬取西刺代理的功能。
@@ -48,6 +51,17 @@ def crawl_zhandaye():
     return len(proxy)
 
 
+def crawl_freeproxy():
+    url = "https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list"
+    urllib3.disable_warnings()
+    html = requests.get(url, headers=HEADERS, verify=False).content
+    html = html.decode('utf-8')
+    data = html.split("\n")
+    for proxy_str in data:
+        if proxy_str:
+            proxy_json = json.loads(proxy_str)
+
+
+
 if __name__ == '__main__':
-    data = crawl_xici()
-    print(data)
+    crawl_freeproxy()

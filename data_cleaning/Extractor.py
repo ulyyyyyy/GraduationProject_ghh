@@ -18,13 +18,18 @@ class Extractor:
         self.__threshold = threshold
 
     def getText(self, content: str) -> str:
+        """
+
+        :param content:
+        :return:
+        """
         if self.__text:
-            self.__text = []
+            self.__text = []    # clear
         lines = content.split('\n')
         for i in range(len(lines)):
-            lines[i] = re.sub("\r|\n|\\s{2,}", "",lines[i])
+            lines[i] = re.sub("\r|\n|\\s{2,}", "",lines[i]) # 去空格
         self.__indexDistribution.clear()
-        for i in range(0, len(lines) - self.__blocksWidth):
+        for i in range(0, len(lines) - self.__blocksWidth): # 统计字数
             wordsNum = 0
             for j in range(i, i + self.__blocksWidth):
                 lines[j] = lines[j].replace("\\s", "")
@@ -34,26 +39,24 @@ class Extractor:
         end = -1
         boolstart = False
         boolend = False
-        if len(self.__indexDistribution) < 3:
-            return 'This page has no content to extract'
         for i in range(len(self.__indexDistribution) - 3):
-            if(self.__indexDistribution[i] > self.__threshold and (not boolstart)):
-                if (self.__indexDistribution[i + 1] != 0 or self.__indexDistribution[i + 2] != 0 or self.__indexDistribution[i + 3] != 0):
+            if self.__indexDistribution[i] > self.__threshold and (not boolstart):  # 如果单行字数超过指定值，
+                if self.__indexDistribution[i + 1] != 0 or self.__indexDistribution[i + 2] != 0 or self.__indexDistribution[i + 3] != 0:
                     boolstart = True
                     start = i
                     continue
-            if (boolstart):
-                if (self.__indexDistribution[i] == 0 or self.__indexDistribution[i + 1] == 0):
+            if boolstart:
+                if self.__indexDistribution[i] == 0 or self.__indexDistribution[i + 1] == 0:
                     end = i
                     boolend = True
             tmp = []
-            if(boolend):
+            if boolend:
                 for ii in range(start, end + 1):
-                    if(len(lines[ii]) < 5):
+                    if len(lines[ii]) < 5:
                         continue
                     tmp.append(lines[ii] + "\n")
                 str = "".join(list(tmp))
-                if ("Copyright" in str or "版权所有" in str):
+                if "Copyright" in str or "版权所有" in str:
                     continue
                 self.__text.append(str)
                 boolstart = boolend = False
@@ -83,9 +86,10 @@ class Extractor:
         return htmlstr
 
     def getHtml(self, url: str) -> str:
-        response = requests.get(url, headers=HEADERS)
-        encode_info = chardet.detect(response.content)
-        response.encoding = encode_info['encoding'] if encode_info['confidence'] > 0.5 else 'utf-8'
+        with requests.Session() as s:
+            response = s.get(url, headers=HEADERS)
+            encode_info = chardet.detect(response.content)
+            response.encoding = encode_info['encoding'] if encode_info['confidence'] > 0.5 else 'utf-8'
         return response.text
 
     def readHtml(self, path: str, coding: str) -> str:
