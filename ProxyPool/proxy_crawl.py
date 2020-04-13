@@ -60,8 +60,9 @@ def crawl_freeproxy():
     for proxy_str in data:
         if proxy_str:
             proxy_json = json.loads(proxy_str)
-
+    return proxy_json
 
 
 if __name__ == '__main__':
-    crawl_freeproxy()
+    data = crawl_freeproxy()
+    print(data)
