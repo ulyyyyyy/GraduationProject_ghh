@@ -52,6 +52,7 @@ def crawl_zhandaye():
 
 
 def crawl_freeproxy():
+    proxy_list = []
     url = "https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list"
     urllib3.disable_warnings()
     html = requests.get(url, headers=HEADERS, verify=False).content
@@ -59,8 +60,11 @@ def crawl_freeproxy():
     data = html.split("\n")
     for proxy_str in data:
         if proxy_str:
-            proxy_json = json.loads(proxy_str)
-    return proxy_json
+            host = json.loads(proxy_str)['host']
+            port = json.loads(proxy_str)['port']
+            type = json.loads(proxy_str)['type']
+            proxy_list.append(f'"{type}": "http://{host}:{port}"')
+    return proxy_list
 
 
 if __name__ == '__main__':

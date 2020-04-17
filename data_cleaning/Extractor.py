@@ -3,7 +3,6 @@ from Settings import HEADERS
 
 import re
 import chardet
-import asyncio
 import requests
 
 
