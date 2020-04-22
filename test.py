@@ -17,15 +17,5 @@ def download(movie):
 
 
 if __name__ == '__main__':
-
-    threads = []
-
-    for task in tasks:
-        t = Thread(target=download, args=(task,))   # 创建线程
-        t.start()
-        threads.append(t)
-
-    for t in threads:
-        t.join()
-
-    print("都下载完了")
+    a = 'https'
+    print(a[0:4])

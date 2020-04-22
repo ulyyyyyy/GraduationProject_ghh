@@ -17,3 +17,6 @@ class CsdnItem(scrapy.Item):
     title = scrapy.Field()
     url = scrapy.Field()
     # content = scrapy.Field()
+
+class V_qqItem(scrapy.Item):
+    urls = scrapy.Field()
