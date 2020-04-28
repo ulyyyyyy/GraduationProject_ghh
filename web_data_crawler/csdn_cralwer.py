@@ -27,9 +27,9 @@ def parse_urls(url_list: list):
             html = extractor.getHtml(url_list[i])
             content = extractor.filter_tags(html)
             data = clean_content(extractor.getText(content))
-            with open(f'E:/c++/毕业设计开发日志/06.文本数据集/学习/csdn/{i}.txt', 'w', encoding='utf-8') as txtfile:
+            with open(f'E:/c++/毕业设计开发日志/06.文本数据集/学习/csdn/{i+199}.txt', 'w', encoding='utf-8') as txtfile:
                 txtfile.write(data)
-            print(f"第{i}篇文章处理完毕")
+            print(f"第{i+199}篇文章处理完毕")
         print(f"共{i}篇文章处理完毕")
     except Exception as error:
         print(error)

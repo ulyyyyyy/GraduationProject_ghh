@@ -1,21 +1,12 @@
-from time import sleep
-from threading import Thread
-
-tasks = []
-for i in range(10):
-    tasks.append(f"movie{i}")
-
-def download(movie):
-    """
-
-    :param movie:
-    :return:
-    """
-    print(f"start downloadwing {movie}")
-    sleep(4)
-    print(f"finished downloading {movie}")
-
+import jieba, requests
+from Settings import HEADERS
+from data_cleaning.Extractor import Extractor
+from data_cleaning.content_clean import clean_content
 
 if __name__ == '__main__':
-    a = 'https'
-    print(a[0:4])
+    url = 'https://www.huomao.com/1882'
+    ex = Extractor(threshold=50)
+    html = ex.getHtml(url)
+    content = ex.filter_tags(html)
+    data = clean_content(ex.getText(content))
+    print(data)

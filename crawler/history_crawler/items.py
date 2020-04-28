@@ -20,3 +20,6 @@ class CsdnItem(scrapy.Item):
 
 class V_qqItem(scrapy.Item):
     urls = scrapy.Field()
+
+class taobao_Item(scrapy.Item):
+    urls = scrapy.Field()
