@@ -7,6 +7,6 @@ keywords = jieba.analyse.extract_tags(data, topK=400, withWeight=True, allowPOS=
 
 # print(type(keywords))
 # <class 'list'>
-print(keywords)
+
 for item in keywords:
     print(item[0], item[1])
