@@ -5,17 +5,14 @@ Created on 2015-12-30 @author: Eastmount
 """
 
 import time
-import re
-import os
-import sys
 import codecs
 import shutil
 from sklearn import feature_extraction
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 
-'''''
-sklearn里面的TF-IDF主要用到了两个函数：CountVectorizer()和TfidfTransformer()。
+'''
+    sklearn里面的TF-IDF主要用到了两个函数：CountVectorizer()和TfidfTransformer()。
     CountVectorizer是通过fit_transform函数将文本中的词语转换为词频矩阵。
     矩阵元素weight[i][j] 表示j词在第i个文本下的词频，即各个词语出现的次数。
     通过get_feature_names()可看到所有文本的关键字，通过toarray()可看到词频矩阵的结果。
@@ -26,7 +23,7 @@ if __name__ == "__main__":
     corpus = []  # 文档预料 空格连接
 
     # 读取预料 一行预料为一个文档
-    for line in open('娱乐-视频.txt', 'r', encoding='utf-8').readlines():
+    for line in open('E:/c++/毕业设计开发日志/06.文本数据集/合集/合集3.txt', 'r', encoding='utf-8').readlines():
         # print(line)
         corpus.append(line.strip())
         # print corpus
@@ -44,7 +41,7 @@ if __name__ == "__main__":
     word = vectorizer.get_feature_names()
     # 将tf-idf矩阵抽取出来，元素w[i][j]表示j词在i类文本中的tf-idf权重
     weight = tfidf.toarray()
-    resName = "BaiduTfidf_Result.txt"
+    resName = "C:/Users/叫乌鸦的少年怪/Desktop/Result.txt"
     result = codecs.open(resName, 'w', 'utf-8')
     for j in range(len(word)):
         result.write(word[j] + ' ')

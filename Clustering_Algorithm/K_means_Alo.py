@@ -72,8 +72,8 @@ def K_means(data, K, tol, N):
 
 
 starttime = time.clock()
-data = np.loadtxt("data/cluster.csv", delimiter=",")
-labels, _ = K_means(data, 3, 0.01, 100)
+data = np.loadtxt('E:/c++/毕业设计开发日志/06.文本数据集/合集/合集3.txt', encoding='utf-8-sig', delimiter=" ")
+labels, _ = K_means(data, 5, 0.01, 100)
 endtime = time.clock()
 print(endtime - starttime)
 plotFeature(data, labels)

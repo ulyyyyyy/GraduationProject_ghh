@@ -40,8 +40,13 @@ def read_history():
     for result in results:
         t = parse_url(result[0])
         real_results.append(t)
-    f_txt = open(r'C:\Users\叫乌鸦的少年怪\Desktop\log.txt', 'a+')
+    f_txt = open(r'C:\Users\叫乌鸦的少年怪\Desktop\his.txt', 'a+')
     for i in real_results:
         f_txt.write(i + '\n')
     f_txt.close()
+    print(len(real_results))
     print('Read Chrome History Has Done')
+
+
+if __name__ == '__main__':
+    read_history()

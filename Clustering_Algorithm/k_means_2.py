@@ -7,22 +7,9 @@ from sklearn.cluster import KMeans
 
 
 class KmeansClustering():
-    def __init__(self, stopwords_path=None):
-        self.stopwords = self.load_stopwords(stopwords_path)
+    def __init__(self):
         self.vectorizer = CountVectorizer()
         self.transformer = TfidfTransformer()
-
-    def load_stopwords(self, stopwords=None):
-        """
-        加载停用词
-        :param stopwords:
-        :return:
-        """
-        if stopwords:
-            with open(stopwords, 'r', encoding='utf-8') as f:
-                return [line.strip() for line in f]
-        else:
-            return []
 
     def preprocess_data(self, corpus_path):
         """
@@ -33,7 +20,7 @@ class KmeansClustering():
         corpus = []
         with open(corpus_path, 'r', encoding='utf-8') as f:
             for line in f:
-                corpus.append(' '.join([word for word in jieba.lcut(line.strip()) if word not in self.stopwords]))
+                corpus.append(' '.join([word for word in jieba.lcut(line.strip())]))
         return corpus
 
     def get_text_tfidf_matrix(self, corpus):
@@ -66,7 +53,6 @@ class KmeansClustering():
         # clf.fit(weights)
 
         y = clf.fit_predict(weights)
-
         # 中心点
         # centers = clf.cluster_centers_
 
@@ -84,6 +70,6 @@ class KmeansClustering():
 
 
 if __name__ == '__main__':
-    Kmeans = KmeansClustering(stopwords_path='../data/stop_words.txt')
-    result = Kmeans.kmeans('../data/test_data.txt', n_clusters=5)
+    Kmeans = KmeansClustering()
+    result = Kmeans.kmeans('C:/Users/叫乌鸦的少年怪/Desktop/Result.txt', n_clusters=5)
     print(result)

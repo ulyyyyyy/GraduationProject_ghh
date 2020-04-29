@@ -1,12 +1,14 @@
-import jieba, requests
-from Settings import HEADERS
-from data_cleaning.Extractor import Extractor
-from data_cleaning.content_clean import clean_content
+import csv, time, os
 
 if __name__ == '__main__':
-    url = 'https://www.huomao.com/1882'
-    ex = Extractor(threshold=50)
-    html = ex.getHtml(url)
-    content = ex.filter_tags(html)
-    data = clean_content(ex.getText(content))
-    print(data)
+    path = 'E:/c++/毕业设计开发日志/06.文本数据集/合集/test/'
+    data_list = []
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            with open(path + file, 'r', encoding='utf-8-sig') as txt_file:
+                data_list += txt_file.readlines()
+
+    with open(path + '合集.txt', 'w', encoding='utf-8') as new_file:
+        for data in data_list:
+            new_file.write(data)
+    print("ok")

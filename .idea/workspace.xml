@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4cf6905-f56d-467b-8825-02a979c367a8" name="Default Changelist" comment="" />
+    <list default="true" id="c4cf6905-f56d-467b-8825-02a979c367a8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Clustering_Algorithm/k-means3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_cleaning/clean_nunbers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clustering_Algorithm/K_means_Alo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clustering_Algorithm/K_means_Alo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clustering_Algorithm/k_means_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clustering_Algorithm/k_means_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clustering_Algorithm/tf_idf.py" beforeDir="false" afterPath="$PROJECT_DIR$/Clustering_Algorithm/tf_idf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_cleaning/Collection_txt.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleaning/Collection_txt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/read_history/read_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_history/read_history.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_data_crawler/taobao_crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_data_crawler/taobao_crawler.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,22 +28,38 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ulyyyyyy &lt;gzw736118298@qq.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VgkT46RVEPAOCz6M5YjEmgJHWG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/cn-text-classifier-master" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\c++\pythonWS\GraduationProject\read_history" />
-      <recent name="E:\c++\pythonWS\GraduationProject" />
-      <recent name="E:\c++\pythonWS\GraduationProject\data_cleaning" />
-      <recent name="E:\c++\pythonWS\GraduationProject\proxypool" />
-      <recent name="E:\c++\pythonWS\GraduationProject\method" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\c++\pythonWS\GraduationProject\Clustering_Algorithm" />
+      <recent name="E:\c++\pythonWS\GraduationProject\data_cleaning" />
       <recent name="E:\c++\pythonWS\GraduationProject" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\c++\pythonWS\GraduationProject\web_data_crawler" />
+      <recent name="E:\c++\pythonWS\GraduationProject\crawler\history_crawler\spiders" />
+      <recent name="E:\c++\pythonWS\GraduationProject\crawler" />
+      <recent name="E:\c++\pythonWS\GraduationProject\history_crawler\history_crawler\spiders" />
+      <recent name="E:\c++\pythonWS\GraduationProject\data_cleaning" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -45,8 +74,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.create_proxy_txt">
-    <configuration name="Crawler_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.taobao_crawler">
+    <configuration name="clean_nunbers" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GraduationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,7 +87,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/Crawler_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/clean_nunbers.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -67,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="content_clean" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="k_means_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GraduationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,11 +104,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_cleaning" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Clustering_Algorithm" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/content_clean.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Clustering_Algorithm/k_means_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create_proxy_txt" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="read_history" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GraduationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,11 +125,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ProxyPool" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/read_history" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ProxyPool/create_proxy_txt.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/read_history/read_history.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +138,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="proxy_crawl" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="taobao_crawler" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GraduationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,11 +146,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ProxyPool" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web_data_crawler" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ProxyPool/proxy_crawl.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web_data_crawler/taobao_crawler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.create_proxy_txt" />
-        <item itemvalue="Python.proxy_crawl" />
+        <item itemvalue="Python.taobao_crawler" />
+        <item itemvalue="Python.read_history" />
+        <item itemvalue="Python.clean_nunbers" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.content_clean" />
-        <item itemvalue="Python.Crawler_test (1)" />
+        <item itemvalue="Python.k_means_2" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +201,86 @@
       <option name="presentableId" value="Default" />
       <updated>1577682129765</updated>
     </task>
+    <task id="LOCAL-00001" summary="2020.04.06 commit&#10;修改了文本清洗的方法，清洗效果优化。">
+      <created>1586152103799</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586152103800</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2020.04.07 commit&#10;优化了文本清洗&#10;新增了freeproxy国外代理的爬取，未完成。">
+      <created>1586243310082</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586243310082</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2020.04.07 commit&#10;增加csdn爬虫">
+      <created>1586742697469</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586742697469</updated>
+    </task>
+    <task id="LOCAL-00004" summary="2020.04.13 commit&#10;优化csdn爬虫">
+      <created>1586793549330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586793549330</updated>
+    </task>
+    <task id="LOCAL-00005" summary="2020.04.13 commit&#10;优化csdn爬虫">
+      <created>1587136703521</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587136703521</updated>
+    </task>
+    <task id="LOCAL-00006" summary="2020.04.13 commit&#10;优化csdn爬虫">
+      <created>1587531942045</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587531942045</updated>
+    </task>
+    <task id="LOCAL-00007" summary="2020.04.28 commit&#10;添加了若干网页爬虫，jieba库中tf-idf算法，聚类算法。">
+      <created>1588054329833</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588054329833</updated>
+    </task>
+    <task id="LOCAL-00008" summary="2020.04.28 commit&#10;修改了合并文本脚本">
+      <created>1588070789946</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1588070789946</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="2020.04.06 commit&#10;修改了文本清洗的方法，清洗效果优化。" />
+    <MESSAGE value="2020.04.07 commit&#10;优化了文本清洗&#10;新增了freeproxy国外代理的爬取，未完成。" />
+    <MESSAGE value="2020.04.07 commit&#10;增加csdn爬虫" />
+    <MESSAGE value="2020.04.13 commit&#10;优化csdn爬虫" />
+    <MESSAGE value="2020.04.28 commit&#10;添加了若干网页爬虫，jieba库中tf-idf算法，聚类算法。" />
+    <MESSAGE value="2020.04.28 commit&#10;修改了合并文本脚本" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020.04.28 commit&#10;修改了合并文本脚本" />
   </component>
 </project>
