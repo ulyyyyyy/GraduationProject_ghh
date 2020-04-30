@@ -3,6 +3,7 @@
 import jieba
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.externals import joblib
 from sklearn.cluster import KMeans
 
 
@@ -50,26 +51,41 @@ class KmeansClustering():
 
         clf = KMeans(n_clusters=n_clusters)
 
-        # clf.fit(weights)
+        clf.fit(weights)
 
-        y = clf.fit_predict(weights)
+        print('cluster_center:', clf.cluster_centers_)
+
+        # 每个样本所属的簇
+        # print(clf.labels_)
+        print('list_number label  ')
+        i = 1
+        while i <= len(clf.labels_):
+            # print(i, '          ', clf.labels_[i - 1])
+            with open('聚类结果.txt', 'a+', encoding='utf-8') as rlt_txt:
+                rlt_txt.write(f"{i}          {clf.labels_[i - 1]}\n")
+            i = i + 1
+
+        # 用来评估簇的个数是否合适，距离越小说明簇分的越好，选取临界点的簇个数
+        print('inertia:', clf.inertia_)
+
+        # 保存模型
+        joblib.dump(clf, 'km.pkl')
+        joblib.dump(clf, 'km.txt')
+        print('模型以保存完毕')
+        # y = clf.fit_predict(weights)
         # 中心点
         # centers = clf.cluster_centers_
 
-        # 用来评估簇的个数是否合适,距离约小说明簇分得越好,选取临界点的簇的个数
-        # score = clf.inertia_
-
         # 每个样本所属的簇
-        result = {}
-        for text_idx, label_idx in enumerate(y):
-            if label_idx not in result:
-                result[label_idx] = [text_idx]
-            else:
-                result[label_idx].append(text_idx)
-        return result
+        # result = {}
+        # for text_idx, label_idx in enumerate(y):
+        #     if label_idx not in result:
+        #         result[label_idx] = [text_idx]
+        #     else:
+        #         result[label_idx].append(text_idx)
+        # return result
 
 
 if __name__ == '__main__':
     Kmeans = KmeansClustering()
-    result = Kmeans.kmeans('C:/Users/叫乌鸦的少年怪/Desktop/Result.txt', n_clusters=5)
-    print(result)
+    Kmeans.kmeans('E:/c++/毕业设计开发日志/06.文本数据集/合集/test/合集2.txt', n_clusters=5)
