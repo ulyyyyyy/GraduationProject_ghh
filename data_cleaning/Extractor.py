@@ -115,7 +115,7 @@ class Extractor:
         re_comment = re.compile('<!--.*?-->', re.DOTALL)
         re_space = re.compile(' +')
         s = re_cdata.sub('', htmlstr)
-        s = re_doctype.sub('',s)
+        s = re_doctype.sub('', s)
         s = re_nav.sub('', s)
         s = re_script.sub('', s)
         s = re_style.sub('', s)

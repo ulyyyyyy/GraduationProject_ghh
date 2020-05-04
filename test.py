@@ -1,14 +1,18 @@
-import csv, time, os
+from data_cleaning.Extractor import Extractor
+import re
+from data_cleaning.content_clean import clean_content
 
-if __name__ == '__main__':
-    path = 'E:/c++/毕业设计开发日志/06.文本数据集/合集/test/'
-    data_list = []
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            with open(path + file, 'r', encoding='utf-8-sig') as txt_file:
-                data_list += txt_file.readlines()
+ex = Extractor(threshold=30)
+html = ex.getHtml('https://blog.csdn.net/freesum/article/details/7376006')
+all_data = len(html)
+content = ex.filter_tags(html)
+text_data = len(content)
+# print(content)
+content = re.sub("\n", "", content)
+# print(content)
+per = "{:.2%}".format(text_data/all_data)
 
-    with open(path + '合集.txt', 'w', encoding='utf-8') as new_file:
-        for data in data_list:
-            new_file.write(data)
-    print("ok")
+# print(f"总长度{all_data}， 文本长度{text_data}, 百分比{per}")
+
+content = clean_content(content)
+print(content)

@@ -6,8 +6,6 @@ Created on 2015-12-30 @author: Eastmount
 
 import time
 import codecs
-import shutil
-from sklearn import feature_extraction
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 

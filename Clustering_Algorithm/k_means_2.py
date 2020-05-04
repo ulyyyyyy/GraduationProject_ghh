@@ -50,7 +50,6 @@ class KmeansClustering():
         weights = self.get_text_tfidf_matrix(corpus)
 
         clf = KMeans(n_clusters=n_clusters)
-
         clf.fit(weights)
 
         print('cluster_center:', clf.cluster_centers_)
@@ -72,7 +71,10 @@ class KmeansClustering():
         joblib.dump(clf, 'km.pkl')
         joblib.dump(clf, 'km.txt')
         print('模型以保存完毕')
-        # y = clf.fit_predict(weights)
+
+        clf_load = joblib.load('km.pkl')
+        y = clf_load.fit_predict(weights)
+
         # 中心点
         # centers = clf.cluster_centers_
 
