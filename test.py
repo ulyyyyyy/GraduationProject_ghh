@@ -1,18 +1,11 @@
-from data_cleaning.Extractor import Extractor
 import re
-from data_cleaning.content_clean import clean_content
+from collections import Counter
 
-ex = Extractor(threshold=30)
-html = ex.getHtml('https://blog.csdn.net/freesum/article/details/7376006')
-all_data = len(html)
-content = ex.filter_tags(html)
-text_data = len(content)
-# print(content)
-content = re.sub("\n", "", content)
-# print(content)
-per = "{:.2%}".format(text_data/all_data)
-
-# print(f"总长度{all_data}， 文本长度{text_data}, 百分比{per}")
-
-content = clean_content(content)
-print(content)
+str = """[1 4 1 4 1 0 4 4 4 4 2 4 4 3 0 0 3 0 3 4 3 0 0 0 4 3 0 4 3 0 0 0 4 0 3 0 2
+ 4 0 2 4 2 4 0 2 0 2 2 3 0 0 0 3 3 0 2 3 0 2 2 4 3 2 3 2 2 3 2 2 3 2 2 3 0
+ 0 3 0 1 0 4 2 2 1 2 1 0 4 0 4 2 4 2 0 0 4 2 4 4 2 0 4 4 4 4 4 0 3 2 0 2 0
+ 4 2 4 2 2 4 2 3 3 4 2 2 2 2 4 2 4 2 0 2]"""
+list = re.findall("\d", str)
+result = Counter(list)
+print(result)
+print(f"perforce: {37/len(list)}")
