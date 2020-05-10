@@ -1,0 +1,95 @@
+graph:{
+  title:"classes"
+  layoutalgorithm:dfs
+  late_edge_labels:yes
+  port_sharing:no
+  manhattan_edges:yes
+  node: {title:"0"  label:"\fbcollections.defaultdict\fn\n\f____________________________\n\f08default_factory\n\f08default_factory : NoneType\n\f____________________________"
+  shape:box
+}
+  node: {title:"1"  label:"\fbk_means_2.KmeansClustering\fn\n\f____________________________\n\f08transformer\n\f08vectorizer\n\f____________________________\n\f10get_text_tfidf_matrix()\n\f10keams_predict()\n\f10kmeans()\n\f10preprocess_data()"
+  shape:box
+}
+  node: {title:"2"  label:"\fbnumpy.core.numerictypes.generic\fn\n\f_________________________________\n\f08T : NoneType\n\f08base : NoneType\n\f08data : NoneType\n\f08dtype : NoneType\n\f08flags : NoneType\n\f08flat : NoneType\n\f08imag : NoneType\n\f08itemsize : NoneType\n\f08nbytes : NoneType\n\f08ndim : NoneType\n\f08real : NoneType\n\f08size : NoneType\n\f08strides : NoneType\n\f_________________________________\n\f10all()\n\f10any()\n\f10argmax()\n\f10argmin()\n\f10argsort()\n\f10astype()\n\f10base()\n\f10byteswap()\n\f10choose()\n\f10clip()\n\f10compress()\n\f10conj()\n\f10conjugate()\n\f10copy()\n\f10cumprod()\n\f10cumsum()\n\f10data()\n\f10diagonal()\n\f10dtype()\n\f10dump()\n\f10dumps()\n\f10fill()\n\f10flags()\n\f10flat()\n\f10flatten()\n\f10getfield()\n\f10imag()\n\f10item()\n\f10itemset()\n\f10itemsize()\n\f10max()\n\f10mean()\n\f10min()\n\f10nbytes()\n\f10ndim()\n\f10newbyteorder()\n\f10nonzero()\n\f10prod()\n\f10ptp()\n\f10put()\n\f10ravel()\n\f10real()\n\f10repeat()\n\f10reshape()\n\f10resize()\n\f10round()\n\f10searchsorted()\n\f10setfield()\n\f10setflags()\n\f10shape()\n\f10size()\n\f10sort()\n\f10squeeze()\n\f10std()\n\f10strides()\n\f10sum()\n\f10swapaxes()\n\f10take()\n\f10tobytes()\n\f10tofile()\n\f10tolist()\n\f10tostring()\n\f10trace()\n\f10transpose()\n\f10var()\n\f10view()"
+  shape:box
+}
+  node: {title:"3"  label:"\fbnumpy.core.numerictypes.int64\fn\n\f_______________________________"
+  shape:box
+}
+  node: {title:"4"  label:"\fbnumpy.core.numerictypes.integer\fn\n\f_________________________________\n\f08denominator : NoneType\n\f08numerator : NoneType\n\f_________________________________"
+  shape:box
+}
+  node: {title:"5"  label:"\fbnumpy.core.numerictypes.number\fn\n\f________________________________"
+  shape:box
+}
+  node: {title:"6"  label:"\fbnumpy.core.numerictypes.signedinteger\fn\n\f_______________________________________"
+  shape:box
+}
+  node: {title:"7"  label:"\fbsklearn.base.BaseEstimator\fn\n\f____________________________\n\f10get_params()\n\f10set_params()"
+  shape:box
+}
+  node: {title:"8"  label:"\fbsklearn.base.TransformerMixin\fn\n\f_______________________________\n\f10fit_transform()"
+  shape:box
+}
+  node: {title:"9"  label:"\fbsklearn.feature_extraction.text.CountVectorizer\fn\n\f_________________________________________________\n\f08analyzer : str\n\f08binary : bool\n\f08decode_error : str\n\f08dtype\n\f08encoding : str\n\f08input : str\n\f08lowercase : bool\n\f08max_df : float\n\f08max_features : NoneType\n\f08min_df : int\n\f08ngram_range : tuple\n\f08preprocessor : NoneType\n\f08stop_words : NoneType\n\f08stop_words_ : set\n\f08strip_accents : NoneType\n\f08token_pattern : str\n\f08tokenizer : NoneType\n\f08vocabulary : NoneType\n\f08vocabulary_ : dict\n\f_________________________________________________\n\f10fit()\n\f10fit_transform()\n\f10get_feature_names()\n\f10inverse_transform()\n\f10transform()"
+  shape:box
+}
+  node: {title:"10"  label:"\fbsklearn.feature_extraction.text.TfidfTransformer\fn\n\f__________________________________________________\n\f08idf_\n\f08idf_\n\f08norm : str\n\f08smooth_idf : bool\n\f08sublinear_tf : bool\n\f08use_idf : bool\n\f__________________________________________________\n\f10fit()\n\f10transform()"
+  shape:box
+}
+  node: {title:"11"  label:"\fbsklearn.feature_extraction.text._VectorizerMixin\fn\n\f__________________________________________________\n\f08fixed_vocabulary_ : bool\n\f08vocabulary_ : dict\n\f__________________________________________________\n\f10build_analyzer()\n\f10build_preprocessor()\n\f10build_tokenizer()\n\f10decode()\n\f10get_stop_words()"
+  shape:box
+}
+  edge: {sourcename:"3" targetname:"6"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"4" targetname:"5"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"5" targetname:"2"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"6" targetname:"4"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"9" targetname:"7"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"9" targetname:"11"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"10" targetname:"7"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"10" targetname:"8"  arrowstyle:solid
+  backarrowstyle:none
+  backarrowsize:10
+}
+  edge: {sourcename:"0" targetname:"9"  label:"vocabulary_"
+  arrowstyle:solid
+  backarrowstyle:none
+  textcolor:green
+}
+  edge: {sourcename:"3" targetname:"9"  label:"dtype"
+  arrowstyle:solid
+  backarrowstyle:none
+  textcolor:green
+}
+  edge: {sourcename:"9" targetname:"1"  label:"vectorizer"
+  arrowstyle:solid
+  backarrowstyle:none
+  textcolor:green
+}
+  edge: {sourcename:"10" targetname:"1"  label:"transformer"
+  arrowstyle:solid
+  backarrowstyle:none
+  textcolor:green
+}
+}

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from Settings import HEADERS
+import urllib3
 
+from Settings import HEADERS
 import re
 import chardet
 import requests
@@ -86,9 +87,11 @@ class Extractor:
 
     def getHtml(self, url: str) -> str:
         with requests.Session() as s:
-            response = s.get(url, headers=HEADERS)
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+            response = s.get(url, headers=HEADERS, timeout=1, verify=False)
             encode_info = chardet.detect(response.content)
             response.encoding = encode_info['encoding'] if encode_info['confidence'] > 0.5 else 'utf-8'
+            s.keep_ailve = False
         return response.text
 
     def readHtml(self, path: str, coding: str) -> str:

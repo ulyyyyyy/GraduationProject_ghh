@@ -46,3 +46,5 @@ def read_history():
     f_txt.close()
     return len(real_results)
 
+if __name__ == '__main__':
+    read_history()
