@@ -11,7 +11,7 @@ def get_urls():
     url_list = []
     category_list = ['Python', 'JAVA', 'web', 'arch', 'db', 'iot', 'fund']  # 七个模块
     for category in category_list:
-        for page in range(3):
+        for page in range(6):
             csdn_api = f"https://blog.csdn.net/api/articles?type=more&category=python&shown_offset={page}"
             response = requests.get(csdn_api, headers=HEADERS)
             html = response.text
@@ -22,15 +22,22 @@ def get_urls():
 
 def parse_urls(url_list: list):
     try:
+        j = 0
         for i in range(len(url_list)):
-            extractor = Extractor(threshold=90)
+            extractor = Extractor(threshold=30)
             html = extractor.getHtml(url_list[i])
             content = extractor.filter_tags(html)
             data = clean_content(extractor.getText(content))
-            with open(f'E:/c++/毕业设计开发日志/06.文本数据集/学习/csdn/{i+199}.txt', 'w', encoding='utf-8') as txtfile:
-                txtfile.write(data)
-            print(f"第{i+199}篇文章处理完毕")
-        print(f"共{i}篇文章处理完毕")
+
+            if data != "This   page   has   no   content   to   extract ":
+                j += 1
+                with open(f'E:/c++/毕业设计开发日志/06.文本数据集/数据清洗模块测试.txt', 'a+', encoding='utf-8') as txtfile:
+                    txtfile.write(data)
+                print(f"第{i}篇文章处理完毕")
+            else:
+                pass
+        print(f"共获取到{i}篇文章")
+        print(f"成功处理{j}篇文章")
     except Exception as error:
         print(error)
 

@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import jieba
+from pandas.tests.extension.numpy_.test_numpy_nested import np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 import joblib
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
+from sklearn.metrics import pairwise_distances_argmin
 
 
 class KmeansClustering():
@@ -51,14 +52,16 @@ class KmeansClustering():
         # print(corpus)
         weights = self.get_text_tfidf_matrix(corpus)
         #
-        clf = KMeans(n_clusters=n_clusters)
+        clf = KMeans(n_clusters=n_clusters, init="k-means++", )
         y = clf.fit(weights)
         # 中心点
-        print('cluster_center:', clf.cluster_centers_)
+        print(clf.labels_)
+
+        # print('cluster_center:', clf.cluster_centers_)
         #
         # 每个样本所属的簇
-        print(clf.labels_)
-        print('list_number label  ')
+        # print(clf.labels_)
+        # print('list_number label  ')
         # i = 1
         # while i <= len(clf.labels_):
         #     # print(i, '          ', clf.labels_[i - 1])
@@ -77,14 +80,12 @@ class KmeansClustering():
         pca = PCA(n_components=2)
         newData = pca.fit_transform(weights)
 
+        colors = ['r', 'g', 'y', 'k', 'm']
         x = []
         y = []
         for i in range(len(corpus)):
-            x.append(newData[i][0])
-            y.append(newData[i][1])
-        plt.plot(x, y, 'or')
+            plt.plot(newData[i][0], newData[i][1], f'o{colors[clf.labels_[i]]}')
         plt.show()
-
 
         # 每个样本所属的簇
         # result = {}
@@ -107,12 +108,11 @@ class KmeansClustering():
         # rlt =
         # if y == 0:
 
-
         # return y
 
 
 if __name__ == '__main__':
     Kmeans = KmeansClustering()
-    # Kmeans.kmeans('E:/c++/毕业设计开发日志/06.文本数据集/合集/test/合集3.txt', n_clusters=5)
-    Kmeans.keams_predict(r'E:/c++/毕业设计开发日志/06.文本数据集/合集/test/搜索引擎-百度.txt')
+    Kmeans.kmeans('E:/c++/毕业设计开发日志/06.文本数据集/合集/test/合集3.txt', n_clusters=5)
+    # Kmeans.keams_predict(r'E:/c++/毕业设计开发日志/06.文本数据集/合集/test/搜索引擎-百度.txt')
     # print(y)

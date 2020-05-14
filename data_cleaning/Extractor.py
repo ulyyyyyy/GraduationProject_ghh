@@ -5,7 +5,7 @@ from Settings import HEADERS
 import re
 import chardet
 import requests
-
+from gevent import monkey
 
 class Extractor:
     """extractor implemented in Python"""
@@ -24,12 +24,12 @@ class Extractor:
         :return:
         """
         if self.__text:
-            self.__text = []    # clear
+            self.__text = []  # clear
         lines = content.split('\n')
         for i in range(len(lines)):
-            lines[i] = re.sub("\r|\n|\\s{2,}", "",lines[i]) # 去空格
+            lines[i] = re.sub("\r|\n|\\s{2,}", "", lines[i])  # 去空格
         self.__indexDistribution.clear()
-        for i in range(0, len(lines) - self.__blocksWidth): # 统计字数
+        for i in range(0, len(lines) - self.__blocksWidth):  # 统计字数
             wordsNum = 0
             for j in range(i, i + self.__blocksWidth):
                 lines[j] = lines[j].replace("\\s", "")
@@ -41,7 +41,8 @@ class Extractor:
         boolend = False
         for i in range(len(self.__indexDistribution) - 3):
             if self.__indexDistribution[i] > self.__threshold and (not boolstart):  # 如果单行字数超过指定值，
-                if self.__indexDistribution[i + 1] != 0 or self.__indexDistribution[i + 2] != 0 or self.__indexDistribution[i + 3] != 0:
+                if self.__indexDistribution[i + 1] != 0 or self.__indexDistribution[i + 2] != 0 or \
+                        self.__indexDistribution[i + 3] != 0:
                     boolstart = True
                     start = i
                     continue
@@ -86,12 +87,15 @@ class Extractor:
         return htmlstr
 
     def getHtml(self, url: str) -> str:
-        with requests.Session() as s:
-            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-            response = s.get(url, headers=HEADERS, timeout=1, verify=False)
-            encode_info = chardet.detect(response.content)
-            response.encoding = encode_info['encoding'] if encode_info['confidence'] > 0.5 else 'utf-8'
-            s.keep_ailve = False
+        requests.adapters.DEFAULT_RETRIES = 5
+        # with requests.Session() as s:
+        s = requests.Session()
+        # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        s.keep_alive = False
+        response = s.get(url, headers=HEADERS, timeout=3)
+        encode_info = chardet.detect(response.content)
+        response.encoding = encode_info['encoding'] if encode_info['confidence'] > 0.5 else 'utf-8'
+        s.close()
         return response.text
 
     def readHtml(self, path: str, coding: str) -> str:
