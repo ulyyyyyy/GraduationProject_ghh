@@ -21,25 +21,25 @@ def get_urls():
     return url_list
 
 def parse_urls(url_list: list):
-    try:
-        j = 0
-        for i in range(len(url_list)):
+    j = 0
+    for i in range(len(url_list)):
+        try:
             extractor = Extractor(threshold=30)
             html = extractor.getHtml(url_list[i])
             content = extractor.filter_tags(html)
             data = clean_content(extractor.getText(content))
-
             if data != "This   page   has   no   content   to   extract ":
                 j += 1
-                with open(f'E:/c++/毕业设计开发日志/06.文本数据集/数据清洗模块测试.txt', 'a+', encoding='utf-8') as txtfile:
+                with open(f'E:/c++/毕业设计开发日志/06.文本数据集/数据清洗模块测试.txt', 'w+', encoding='utf-8') as txtfile:
                     txtfile.write(data)
-                print(f"第{i}篇文章处理完毕")
+                print(f"第{i+1}篇文章处理完毕")
             else:
                 pass
-        print(f"共获取到{i}篇文章")
-        print(f"成功处理{j}篇文章")
-    except Exception as error:
-        print(error)
+        except Exception as e:
+            print(e)
+
+    print(f"共获取到{i}篇文章")
+    print(f"成功处理{j}篇文章")
 
 
 if __name__ == '__main__':

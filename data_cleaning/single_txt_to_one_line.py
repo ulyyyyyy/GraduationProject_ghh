@@ -1,5 +1,8 @@
 import re
 
+def get_txt_to_single(content):
+    content = re.sub('\n', "", content)
+    return content
 
 
 if __name__ == '__main__':

@@ -90,9 +90,9 @@ class Extractor:
         requests.adapters.DEFAULT_RETRIES = 5
         # with requests.Session() as s:
         s = requests.Session()
-        # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         s.keep_alive = False
-        response = s.get(url, headers=HEADERS, timeout=3)
+        response = s.get(url, headers=HEADERS, timeout=3, verify=False)
         encode_info = chardet.detect(response.content)
         response.encoding = encode_info['encoding'] if encode_info['confidence'] > 0.5 else 'utf-8'
         s.close()

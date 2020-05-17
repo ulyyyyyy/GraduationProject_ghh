@@ -6,112 +6,84 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>893</width>
-    <height>582</height>
+    <width>1012</width>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>上网行为分析系统</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1100</width>
-      <height>750</height>
+      <x>30</x>
+      <y>40</y>
+      <width>941</width>
+      <height>581</height>
      </rect>
     </property>
-    <property name="minimumSize">
-     <size>
-      <width>1100</width>
-      <height>750</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>1100</width>
-      <height>16777215</height>
-     </size>
-    </property>
     <property name="styleSheet">
-     <string notr="true">border-color: rgb(170, 170, 255);</string>
+     <string notr="true">border-image: url(:/newPrefix/desktop.png);</string>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>90</y>
+      <width>561</width>
+      <height>141</height>
+     </rect>
     </property>
-    <property name="usesScrollButtons">
-     <bool>true</bool>
+    <property name="font">
+     <font>
+      <family>华文行楷</family>
+      <pointsize>48</pointsize>
+     </font>
     </property>
-    <widget class="QWidget" name="tab1">
-     <attribute name="title">
-      <string>一键分析</string>
-     </attribute>
-     <widget class="QPushButton" name="btn_analyse_all">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>340</y>
-        <width>201</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>一键分析</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_history">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>340</y>
-        <width>201</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>导出历史记录</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab2">
-     <attribute name="title">
-      <string>单个文本分析</string>
-     </attribute>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>60</y>
-        <width>631</width>
-        <height>421</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_analyse_singlt">
-      <property name="geometry">
-       <rect>
-        <x>730</x>
-        <y>400</y>
-        <width>131</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>单段文本分析</string>
-      </property>
-     </widget>
-    </widget>
+    <property name="text">
+     <string>上网行为分析系统</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_history">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>260</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>导出历史记录</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_analyse_all">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>260</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>一键分析</string>
+    </property>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionHow_to_use_this_Programming">
    <property name="text">
     <string>How to use this Programming</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="test.qrc"/>
+ </resources>
  <connections/>
 </ui>
