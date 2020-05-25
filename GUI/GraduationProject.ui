@@ -14,66 +14,227 @@
    <string>上网行为分析系统</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>941</width>
-      <height>581</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1011</width>
+      <height>651</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/newPrefix/desktop.png);</string>
+    <property name="currentIndex">
+     <number>0</number>
     </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>90</y>
-      <width>561</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>华文行楷</family>
-      <pointsize>48</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>上网行为分析系统</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::RichText</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_history">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>260</y>
-      <width>171</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>导出历史记录</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_analyse_all">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>260</y>
-      <width>171</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>一键分析</string>
-    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>一键分析</string>
+     </attribute>
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>951</width>
+        <height>591</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/newPrefix/desktop.png);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>70</y>
+        <width>521</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>华文行楷</family>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>上网行为分析系统</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_history">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>260</y>
+        <width>141</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>导出历史记录</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_analyse_all">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>260</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>一键分析</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>历史记录查看</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>30</y>
+        <width>471</width>
+        <height>561</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>140</y>
+        <width>231</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>查看浏览器历史记录</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_show_his_content">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>240</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>查看</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>文本处理</string>
+     </attribute>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>80</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>https://www.baidu.com</string>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>80</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>输入想查询的网页</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_search_web">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>80</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>查询</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>200</y>
+        <width>731</width>
+        <height>341</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <action name="actionHow_to_use_this_Programming">
