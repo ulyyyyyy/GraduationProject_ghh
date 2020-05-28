@@ -23,8 +23,8 @@ class MyWindow(QMainWindow, Ui_GraduationPro):
         read_history()
 
     def show_analyse(self):
-        a = KmeansClustering()
-        a.keams_predict(r'C:\Users\叫乌鸦的少年怪\Desktop\content.txt')
+        model = KmeansClustering()
+        model.keams_predict(r'C:\Users\叫乌鸦的少年怪\Desktop\content.txt')
 
     def set_table_content(self):
         if os.path.exists(self.path):
